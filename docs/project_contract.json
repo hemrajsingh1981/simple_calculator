@@ -1,0 +1,37 @@
+{
+  "contract_version": "1.0.0",
+  "project_type": "simple",
+  "deployment": {
+    "skip": false,
+    "target": "gcs-static",
+    "port": 80
+  },
+  "doctrine": {
+    "description": "Simple Site (HTML/CSS/JS) Architectural Doctrine",
+    "rules": [
+      "Output Directory: All final, deployable static assets (e.g., `index.html`, `style.css`, `script.js`) MUST be placed into a `dist/` directory at the project root.",
+      "Source Files: For simple projects, source files SHOULD be placed directly in the `dist/` directory. There is no separate `src/` directory or build step required.",
+      "Core Technologies: The project MUST use only standard HTML, CSS, and vanilla JavaScript.",
+      "No Frameworks: The project is strictly FORBIDDEN from using any JavaScript frameworks (like React, Vue, Svelte) or CSS frameworks (like Bootstrap) unless explicitly requested and approved as part of a project type change.",
+      "Dependencies: The project should have no `package.json` or `node_modules`. All code must be self-contained.",
+      "Static Hosting: The infrastructure plan for a 'simple' project type will always target a static hosting solution, such as a Google Cloud Storage bucket configured for website hosting.",
+      "CI/CD Workflow ONLY: The deployment plan MUST consist of a single GitHub Actions workflow file (e.g., `.github/workflows/deploy.yml`).",
+      "FORBIDDEN: The plan is strictly FORBIDDEN from including a separate `deploy.sh` or any other deployment script. All deployment logic MUST be contained within the CI/CD workflow file.",
+      "Deployment Logic: The CI/CD workflow MUST be configured to deploy ONLY the contents of the `dist/` directory (e.g., by using `gsutil rsync -r dist/ gs://<bucket-name>`)."
+    ]
+  },
+  "file_conventions": {
+    "allowed_code_extensions": [
+      ".html",
+      ".css",
+      ".js"
+    ]
+  },
+  "env": {
+    "build_time_public_prefix": "/public/",
+    "required_vars": [
+      "GOOGLE_CLOUD_PROJECT",
+      "GOOGLE_CLOUD_BUCKET"
+    ]
+  }
+}

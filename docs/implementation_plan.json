@@ -1,0 +1,194 @@
+[
+  {
+    "domain": "CODE",
+    "filePath": "dist/calculator.html",
+    "file_brief": "Create a single HTML file that contains all the HTML structure, CSS styling, and JavaScript logic for a simple calculator. The file must be self-contained and runnable directly in a browser without any build step. The HTML structure should include a container div with id 'calculator', a display div with id 'display', and a buttons div with id 'buttons'. The CSS should be embedded within a <style> tag and define the layout and styling for the calculator. The JavaScript should be embedded within a <script> tag and implement the calculator logic.",
+    "acceptance_criteria_text": [
+      "The file must be a valid HTML document with proper DOCTYPE and structure.",
+      "The file must contain a single <head> section with a <title> tag.",
+      "The file must contain a single <body> section.",
+      "The file must contain a <div> element with id 'calculator'.",
+      "The file must contain a <div> element with id 'display'.",
+      "The file must contain a <div> element with id 'buttons'.",
+      "The file must contain a <script> tag with type 'text/javascript'.",
+      "The file must contain a <style> tag."
+    ],
+    "acceptance_criteria_json": {
+      "logic": "AND",
+      "items": [
+        {
+          "id": "html_structure",
+          "description": "The file must be a valid HTML document with proper DOCTYPE and structure.",
+          "type": "regex"
+        },
+        {
+          "id": "head_section",
+          "description": "The file must contain a single <head> section with a <title> tag.",
+          "type": "regex"
+        },
+        {
+          "id": "body_section",
+          "description": "The file must contain a single <body> section.",
+          "type": "regex"
+        },
+        {
+          "id": "calculator_container",
+          "description": "The file must contain a <div> element with id 'calculator'.",
+          "type": "regex"
+        },
+        {
+          "id": "display_element",
+          "description": "The file must contain a <div> element with id 'display'.",
+          "type": "regex"
+        },
+        {
+          "id": "buttons_container",
+          "description": "The file must contain a <div> element with id 'buttons'.",
+          "type": "regex"
+        },
+        {
+          "id": "script_tag",
+          "description": "The file must contain a <script> tag with type 'text/javascript'.",
+          "type": "regex"
+        },
+        {
+          "id": "style_tag",
+          "description": "The file must contain a <style> tag.",
+          "type": "regex"
+        }
+      ]
+    }
+  },
+  {
+    "domain": "CODE",
+    "filePath": "dist/calculator.html",
+    "file_brief": "The CSS styles for the calculator should be embedded within the <style> tag in the HTML file. The styles should define a grid layout for the buttons, style the container, display area, and buttons, and ensure the calculator is responsive and centered on the page.",
+    "acceptance_criteria_text": [
+      "The CSS must define a grid layout for the calculator buttons.",
+      "The CSS must style the calculator container with a background color and border radius.",
+      "The CSS must style the display area with a background color and text alignment.",
+      "The CSS must style the buttons with a background color, border, and hover effects.",
+      "The CSS must ensure the calculator is responsive and centered on the page."
+    ],
+    "acceptance_criteria_json": {
+      "logic": "AND",
+      "items": [
+        {
+          "id": "grid_layout",
+          "description": "The CSS must define a grid layout for the calculator buttons.",
+          "type": "regex"
+        },
+        {
+          "id": "container_styling",
+          "description": "The CSS must style the calculator container with a background color and border radius.",
+          "type": "regex"
+        },
+        {
+          "id": "display_styling",
+          "description": "The CSS must style the display area with a background color and text alignment.",
+          "type": "regex"
+        },
+        {
+          "id": "button_styling",
+          "description": "The CSS must style the buttons with a background color, border, and hover effects.",
+          "type": "regex"
+        },
+        {
+          "id": "responsive_design",
+          "description": "The CSS must ensure the calculator is responsive and centered on the page.",
+          "type": "regex"
+        }
+      ]
+    }
+  },
+  {
+    "domain": "CODE",
+    "filePath": "dist/calculator.html",
+    "file_brief": "The JavaScript logic for the calculator should be embedded within the <script> tag in the HTML file. The script should handle number input (0-9), decimal input (.), arithmetic operations (+, -, ×, ÷), the clear function (C), update the display with the current input and result, and handle division by zero errors.",
+    "acceptance_criteria_text": [
+      "The JavaScript must handle number input (0-9).",
+      "The JavaScript must handle decimal input (.).",
+      "The JavaScript must handle arithmetic operations (+, -, ×, ÷).",
+      "The JavaScript must handle the clear function (C).",
+      "The JavaScript must update the display with the current input and result.",
+      "The JavaScript must handle division by zero errors."
+    ],
+    "acceptance_criteria_json": {
+      "logic": "AND",
+      "items": [
+        {
+          "id": "number_input",
+          "description": "The JavaScript must handle number input (0-9).",
+          "type": "regex"
+        },
+        {
+          "id": "decimal_input",
+          "description": "The JavaScript must handle decimal input (.).",
+          "type": "regex"
+        },
+        {
+          "id": "arithmetic_operations",
+          "description": "The JavaScript must handle arithmetic operations (+, -, ×, ÷).",
+          "type": "regex"
+        },
+        {
+          "id": "clear_function",
+          "description": "The JavaScript must handle the clear function (C).",
+          "type": "regex"
+        },
+        {
+          "id": "display_update",
+          "description": "The JavaScript must update the display with the current input and result.",
+          "type": "regex"
+        },
+        {
+          "id": "error_handling",
+          "description": "The JavaScript must handle division by zero errors.",
+          "type": "regex"
+        }
+      ]
+    }
+  },
+  {
+    "domain": "DEPLOYMENT",
+    "filePath": ".github/workflows/deploy.yml",
+    "file_brief": "Create a GitHub Actions workflow file that will deploy the calculator.html file to a Google Cloud Storage bucket configured for static website hosting. The workflow should trigger on push to the main branch, checkout the repository, set up the Google Cloud SDK, and upload the contents of the dist/ directory to the bucket.",
+    "acceptance_criteria_text": [
+      "The workflow file must be located at .github/workflows/deploy.yml.",
+      "The workflow must trigger on push to the main branch.",
+      "The workflow must use the actions/checkout action.",
+      "The workflow must use the google-github-actions/setup-gcloud action.",
+      "The workflow must use the google-github-actions/upload-cloud-storage action to deploy the dist/ directory."
+    ],
+    "acceptance_criteria_json": {
+      "logic": "AND",
+      "items": [
+        {
+          "id": "workflow_location",
+          "description": "The workflow file must be located at .github/workflows/deploy.yml.",
+          "type": "regex"
+        },
+        {
+          "id": "trigger_event",
+          "description": "The workflow must trigger on push to the main branch.",
+          "type": "regex"
+        },
+        {
+          "id": "checkout_action",
+          "description": "The workflow must use the actions/checkout action.",
+          "type": "regex"
+        },
+        {
+          "id": "gcloud_setup",
+          "description": "The workflow must use the google-github-actions/setup-gcloud action.",
+          "type": "regex"
+        },
+        {
+          "id": "deploy_action",
+          "description": "The workflow must use the google-github-actions/upload-cloud-storage action to deploy the dist/ directory.",
+          "type": "regex"
+        }
+      ]
+    }
+  }
+]
